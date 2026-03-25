@@ -5,17 +5,19 @@ The gallery is divided into two main sections:
 - DC/DC converters
 - AC/DC converters
 
-## Contents
+# Contents
 
 - [DC/DC Converters](#dcdc-converters)
   - [LM25116 Family](#lm25116-family)
     - [LM25116 Stock Configuration](#lm25116-stock-configuration)
-    - [LM25116 with Additional 3uF Output Capacitance](#lm25116-with-additional-3uf-output-capacitance)
+    - [LM25116 with Additional 3 uF Output Capacitance](#lm25116-with-additional-3-uf-output-capacitance)
+    - [Differential Comparison: Stock Configuration vs. Additional 3 uF Output Capacitance](#differential-comparison-stock-configuration-vs-additional-3-uf-output-capacitance)
+  - [AP3012-Based SEPIC Converter](#ap3012-based-sepic-converter)
 - [AC/DC Converters](#acdc-converters)
 
-## DC/DC Converters
+# DC/DC Converters
 
-## LM25116 Family
+### LM25116 Family
 
 The LM25116 is a popular controller for medium-power step-down converter modules commonly found on online marketplaces. In contrast to simpler regulators with an integrated power switch such as the LM2596 family, the LM25116 is a synchronous buck controller intended for more demanding applications with higher current capability and improved efficiency.
 
@@ -27,16 +29,16 @@ The particular module shown here is one of the generic LM25116-based boards freq
 This section shows the measurement results obtained with the unmodified module in its stock configuration.
 
 
-#### Stock Efficiency
+#### LM25116 Stock Efficiency
 ![LM25116 stock efficiency](LM25116/12V_stock/LM25116_12V_buck_stock_efficiency.png)
 
-#### Stock Power Loss
+#### LM25116 Stock Power Loss
 ![LM25116 stock power loss](LM25116/12V_stock/LM25116_12V_buck_stock_Ploss.png)
 
 #### Stock Switching Frequency
 ![LM25116 stock switching frequency](LM25116/12V_stock/LM25116_12V_buck_stock_f_sw.png)
 
-#### Stock Output Voltage Ripple (peak-to-peak)
+#### LM25116 Stock Output Voltage Ripple (peak-to-peak)
 ![LM25116 stock output ripple peak-to-peak](LM25116/12V_stock/LM25116_12V_buck_stock_Vout_pkpk.png)
 
 The [stock efficiency plot](#stock-efficiency) exhibits the typical contour pattern commonly observed for buck converters. As indicated by the marker lines, the converter enters the >90% efficiency region already at moderate load current.
@@ -47,16 +49,16 @@ At the same time, the [stock output voltage ripple plot](#stock-output-voltage-r
 
 In order to investigate whether this issue can be improved with a minimal hardware modification, three additional 1 uF MLCCs were added at the output. Apart from this added output capacitance, the module and test conditions remained unchanged.
 
-#### Efficiency with Additional 3 uF Output Capacitance
+#### LM25116 Efficiency with Additional 3 uF Output Capacitance
 ![LM25116 3 uF efficiency](LM25116/12V_additional_3uF_Cout/LM25116_12V_buck_3uF_efficiency.png)
 
-#### Power Loss with Additional 3 uF Output Capacitance
+#### LM25116 Power Loss with Additional 3 uF Output Capacitance
 ![LM25116 3 uF power loss](LM25116/12V_additional_3uF_Cout/LM25116_12V_buck_3uF_Ploss.png)
 
-#### Switching Frequency with Additional 3 uF Output Capacitance
+#### LM25116 Switching Frequency with Additional 3 uF Output Capacitance
 ![LM25116 3 uF switching frequency](LM25116/12V_additional_3uF_Cout/LM25116_12V_buck_3uF_f_sw.png)
 
-#### Output Voltage Ripple (peak-to-peak) with Additional 3 uF Output Capacitance
+#### LM25116 Output Voltage Ripple (peak-to-peak) with Additional 3 uF Output Capacitance
 ![LM25116 3 uF output ripple peak-to-peak](LM25116/12V_additional_3uF_Cout/LM25116_12V_buck_3uF_Vout_pkpk.png)
 
 The additional 3 uF output capacitance reduces the magnitude of the output ripple, but does not fully resolve the issue. The ripple is improved compared to the stock configuration, yet it still remains above the 1% target in part of the operating range.
@@ -70,16 +72,16 @@ The following plots differ from the absolute plots shown above. Instead of showi
 
 In these differential plots, green indicates operating regions in which the parameter improved from the first variant to the second, white indicates little or no relevant change, and red indicates regions in which the plotted parameter became worse.
 
-#### Differential Efficiency
+#### LM25116 Differential Efficiency
 ![LM25116 stock vs 3 uF efficiency](LM25116/stock_vs_3uF/LM25116_12V_buck_stock_vs_3uF_efficiency.png)
 
-#### Differential Power Loss
+#### LM25116 Differential Power Loss
 ![LM25116 stock vs 3 uF power loss](LM25116/stock_vs_3uF/LM25116_12V_buck_stock_vs_3uF_ploss.png)
 
-#### Differential Switching Frequency
+#### LM25116 Differential Switching Frequency
 ![LM25116 stock vs 3 uF switching frequency](LM25116/stock_vs_3uF/LM25116_12V_buck_stock_vs_3uF_f_sw.png)
 
-#### Differential Output Voltage Ripple (peak-to-peak)
+#### LM25116 Differential Output Voltage Ripple (peak-to-peak)
 ![LM25116 stock vs 3 uF output ripple peak-to-peak](LM25116/stock_vs_3uF/LM25116_12V_buck_stock_vs_3uF_Vout_ripple_pkpk.png)
 
 Overall, the differential plots show that the modification improves the output voltage ripple in some parts of the operating range, while in other regions the ripple becomes slightly worse. This suggests that the additional output capacitance did not simply reduce ripple uniformly, but also altered the overall system control behavior.
@@ -91,20 +93,20 @@ The converter shown in this section is based on the AP3012, a regulator that is 
 
 This raises an interesting question. While the controller can in principle be used in such a configuration from a topological point of view, it is not immediately clear whether it can maintain stable operation in a fourth-order power stage such as a SEPIC converter over the full operating range.
 
-#### Efficiency
+#### AP3012 12V SEPIC Efficiency
 ![AP3012 SEPIC efficiency](AP3012_12V_SEPIC/AP3012_12V_SEPIC_efficiency.png)
 
-#### Output Voltage
+#### AP3012 12V SEPIC Output Voltage
 ![AP3012 SEPIC output voltage](AP3012_12V_SEPIC/AP3012_12V_SEPIC_Vout.png)
 
-#### Output Voltage Ripple (peak-to-peak)
+#### AP3012 12V SEPIC Output Voltage Ripple (peak-to-peak)
 ![AP3012 SEPIC output ripple peak-to-peak](AP3012_12V_SEPIC/AP3012_12V_SEPIC_Vout_pkpk.png)
 
-The measured efficiency and output voltage plots initially suggest that the converter is generally functional. However, the [output voltage ripple plot](#output-voltage-ripple-peak-to-peak) reveals a distinct operating region in which the ripple becomes excessively large compared to the surrounding area. This behavior is highly suspicious and points to a possible oscillation rather than a simple increase in switching ripple.
+The measured efficiency and output voltage plots initially suggest that the converter is generally functional. However, the [output voltage ripple plot](#ap3012-12v-sepic-output-voltage-ripple-peak-to-peak) reveals a distinct operating region in which the ripple becomes excessively large compared to the surrounding area. This behavior is highly suspicious and points to a possible oscillation rather than a simple increase in switching ripple.
 
 To investigate this in more detail, the output ripple was examined by visualizing the automatically sampled oscilloscope trace data in a waveform viewer.
 
-#### Oscilloscope Capture of Output Ripple at an Unstable Operating Point
+#### AP3012 12V SEPIC Oscilloscope Capture of Output Ripple at an Unstable Operating Point
 ![AP3012 SEPIC oscilloscope ripple waveform](AP3012_12V_SEPIC/AP3012_12V_SEPIC_oscillation.png)
 
 The oscilloscope trace confirms that the converter is not merely exhibiting increased switching ripple, but a clear low-frequency oscillation. As indicated by the red markers, the dominant oscillatory component is approximately 150 kHz, while the expected switching activity at about 1.5 MHz is still present and can be identified by the green markers riding on top of the low-frequency envelope.

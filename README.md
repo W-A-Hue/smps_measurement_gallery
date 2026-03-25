@@ -1,9 +1,5 @@
 # smps_measurement_gallery
-This gallery presents a selection of measurements obtained with the automated measurement framework described in my paper [link to paper], which I presented at APEC 2026.
-
-The gallery is divided into two main sections:
-- DC/DC converters
-- AC/DC converters
+This gallery presents a selection of measurements obtained with the automated measurement framework described in our paper, which we presented at APEC 2026.
 
 # Contents
 

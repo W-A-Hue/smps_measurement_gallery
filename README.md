@@ -85,6 +85,31 @@ In these differential plots, green indicates operating regions in which the para
 Overall, the differential plots show that the modification improves the output voltage ripple in some parts of the operating range, while in other regions the ripple becomes slightly worse. This suggests that the additional output capacitance did not simply reduce ripple uniformly, but also altered the overall system control behavior.
 
 
+### AP3012-Based SEPIC Converter
+
+The converter shown in this section is based on the AP3012, a regulator that is commonly used in low-power boost converter applications. In this case, however, it was implemented in a SEPIC topology.
+
+This raises an interesting question. While the controller can in principle be used in such a configuration from a topological point of view, it is not immediately clear whether it can maintain stable operation in a fourth-order power stage such as a SEPIC converter over the full operating range.
+
+#### Efficiency
+![AP3012 SEPIC efficiency](AP3012_12V_SEPIC/AP3012_12V_SEPIC_efficiency.png)
+
+#### Output Voltage
+![AP3012 SEPIC output voltage](AP3012_12V_SEPIC/AP3012_12V_SEPIC_Vout.png)
+
+#### Output Voltage Ripple (peak-to-peak)
+![AP3012 SEPIC output ripple peak-to-peak](AP3012_12V_SEPIC/AP3012_12V_SEPIC_Vout_pkpk.png)
+
+The measured efficiency and output voltage plots initially suggest that the converter is generally functional. However, the [output voltage ripple plot](#output-voltage-ripple-peak-to-peak) reveals a distinct operating region in which the ripple becomes excessively large compared to the surrounding area. This behavior is highly suspicious and points to a possible oscillation rather than a simple increase in switching ripple.
+
+To investigate this in more detail, the output ripple was examined by visualizing the automatically sampled oscilloscope trace data in a waveform viewer.
+
+#### Oscilloscope Capture of Output Ripple at an Unstable Operating Point
+![AP3012 SEPIC oscilloscope ripple waveform](AP3012_12V_SEPIC/AP3012_12V_SEPIC_oscillation.png)
+
+The oscilloscope trace confirms that the converter is not merely exhibiting increased switching ripple, but a clear low-frequency oscillation. As indicated by the red markers, the dominant oscillatory component is approximately 150 kHz, while the expected switching activity at about 1.5 MHz is still present and can be identified by the green markers riding on top of the low-frequency envelope.
+
+
 ## AC/DC Converters
 
 Content will be added here.

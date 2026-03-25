@@ -48,18 +48,41 @@ At the same time, the [stock output voltage ripple plot](#stock-output-voltage-r
 In order to investigate whether this issue can be improved with a minimal hardware modification, three additional 1 uF MLCCs were added at the output. Apart from this added output capacitance, the module and test conditions remained unchanged.
 
 #### Efficiency with Additional 3 uF Output Capacitance
-![LM25116 3 uF efficiency](LM25116/12V_extra_3uF_Cout/LM25116_12V_buck_3uF_efficiency.png)
+![LM25116 3 uF efficiency](LM25116/12V_additional_3uF_Cout/LM25116_12V_buck_3uF_efficiency.png)
 
 #### Power Loss with Additional 3 uF Output Capacitance
-![LM25116 3 uF power loss](LM25116/12V_extra_3uF_Cout/LM25116_12V_buck_3uF_Ploss.png)
+![LM25116 3 uF power loss](LM25116/12V_additional_3uF_Cout/LM25116_12V_buck_3uF_Ploss.png)
 
 #### Switching Frequency with Additional 3 uF Output Capacitance
-![LM25116 3 uF switching frequency](LM25116/12V_extra_3uF_Cout/LM25116_12V_buck_3uF_f_sw.png)
+![LM25116 3 uF switching frequency](LM25116/12V_additional_3uF_Cout/LM25116_12V_buck_3uF_f_sw.png)
 
 #### Output Voltage Ripple (peak-to-peak) with Additional 3 uF Output Capacitance
-![LM25116 3 uF output ripple peak-to-peak](LM25116/12V_extra_3uF_Cout/LM25116_12V_buck_3uF_Vout_pkpk.png)
+![LM25116 3 uF output ripple peak-to-peak](LM25116/12V_additional_3uF_Cout/LM25116_12V_buck_3uF_Vout_pkpk.png)
 
 The additional 3 uF output capacitance reduces the magnitude of the output ripple, but does not fully resolve the issue. The ripple is improved compared to the stock configuration, yet it still remains above the 1% target in part of the operating range.
+
+However, the absolute plots alone do not show whether this modification improves the output ripple uniformly across the full operating range, or how large the local changes actually are. To examine this in more detail, the stock and modified configurations are compared directly using differential plots.
+
+
+### Differential Comparison: Stock Configuration vs. Additional 3 uF Output Capacitance
+
+The following plots differ from the absolute plots shown above. Instead of showing the absolute value of each measured parameter, they show the differential change between the stock configuration and the modified variant with additional output capacitance, thus allowing to directly isolate the impact of a changed component.
+
+In these differential plots, green indicates operating regions in which the parameter improved from the first variant to the second, white indicates little or no relevant change, and red indicates regions in which the plotted parameter became worse.
+
+#### Differential Efficiency
+![LM25116 stock vs 3 uF efficiency](LM25116/stock_vs_3uF/LM25116_12V_buck_stock_vs_3uF_efficiency.png)
+
+#### Differential Power Loss
+![LM25116 stock vs 3 uF power loss](LM25116/stock_vs_3uF/LM25116_12V_buck_stock_vs_3uF_ploss.png)
+
+#### Differential Switching Frequency
+![LM25116 stock vs 3 uF switching frequency](LM25116/stock_vs_3uF/LM25116_12V_buck_stock_vs_3uF_f_sw.png)
+
+#### Differential Output Voltage Ripple (peak-to-peak)
+![LM25116 stock vs 3 uF output ripple peak-to-peak](LM25116/stock_vs_3uF/LM25116_12V_buck_stock_vs_3uF_Vout_ripple_pkpk.png)
+
+Overall, the differential plots show that the modification improves the output voltage ripple in some parts of the operating range, while in other regions the ripple becomes slightly worse. This suggests that the additional output capacitance did not simply reduce ripple uniformly, but also altered the overall system control behavior.
 
 
 ## AC/DC Converters

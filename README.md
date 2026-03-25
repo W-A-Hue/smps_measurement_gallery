@@ -14,6 +14,7 @@ The gallery is divided into two main sections:
     - [Differential Comparison: Stock Configuration vs. Additional 3 uF Output Capacitance](#differential-comparison-stock-configuration-vs-additional-3-uf-output-capacitance)
   - [AP3012-Based SEPIC Converter](#ap3012-based-sepic-converter)
 - [AC/DC Converters](#acdc-converters)
+  - [Generic 24 W USB-PD 12 V Charger](#generic-24-w-usb-pd-12-v-charger)
 
 # DC/DC Converters
 

@@ -114,5 +114,18 @@ The oscilloscope trace confirms that the converter is not merely exhibiting incr
 
 ## AC/DC Converters
 
-Content will be added here.
+### Generic 24 W USB-PD 12 V Charger
 
+This section presents measurements of a generic 24 W USB-PD charger operated at a fixed 12 V output, negotiated via the USB-PD protocol using a USB-C trigger board. Since the adapter is specified for a wide AC input voltage range, it is particularly interesting to examine how its behavior changes with line voltage.
+
+#### Generic 24 W Charger Efficiency Map
+![24 W USB-PD charger efficiency](24W_USB-PD_12V_Charger/24W_USB-PD_12V_Charger_efficiency.png)
+
+#### Generic 24 W Charger Power Factor Map
+![24 W USB-PD charger power factor](24W_USB-PD_12V_Charger/24W_USB-PD_12V_Charger_PF.png)
+
+#### Generic 24 W Charger Efficiency Curves
+![24 W USB-PD charger efficiency curves](24W_USB-PD_12V_Charger/24W_USB-PD_12V_Charger_efficiency_curves.png)
+
+The efficiency map provides a compact overview of the charger behavior across the measured operating range. While the inoput voltage was sweped in 3V-steps over the whole input voltage range, since line voltages only exist in discrete selected steps (schöner schreiben!!!) it is more useful to present the efficiency data as traditional curve arrays.
+The power factor plot reveals a clearly visible dependence on input voltage.

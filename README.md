@@ -128,5 +128,6 @@ This section presents measurements of a generic 24 W USB-PD charger operated at 
 #### Generic 24 W Charger Efficiency Curves
 ![24 W USB-PD charger efficiency curves](24W_USB-PD_12V_Charger/24W_USB-PD_12V_Charger_efficiency_curves.png)
 
-The efficiency map provides a compact overview of the charger behavior across the measured operating range. While the inoput voltage was sweped in 3V-steps over the whole input voltage range, since line voltages only exist in discrete selected steps (schöner schreiben!!!) it is more useful to present the efficiency data as traditional curve arrays.
+The efficiency map provides a compact overview of the charger behavior across the measured operating range. While the input voltage was swept in 3 V steps over the supported input range, practical mains voltages are typically encountered only at a limited number of nominal levels. For this reason, the efficiency data is also presented as a set of conventional curves.
+
 The power factor plot reveals a clearly visible dependence on input voltage.
